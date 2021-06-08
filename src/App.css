@@ -1,38 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Kdam+Thmor&display=swap');
+
 .App {
   text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+.header {
+  display: flex;
+  width: 100%;
+  padding: 20px;
+}
+.header__search {
+  font-size: 20px;
+  border: transparent;
+}
+.header .header__search:focus{
+  border: 1px solid red;
+}
+.header__search::placeholder {
+  color: #a9a9a9;
+  font-size: 20px;
+}
+.header .header__img {
+  display: flex;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+}
+.header__search-img{
+  width: 30px;
+  height: 30px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.header .header__search {
+  width: 100%;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 50px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.main .card {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  width: 250px;
+  height: 350px;
+  border: 1px solid #e9e9e9;
+  margin-bottom: 30px;
+  position: relative;
+}
+.card .heart {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.card .card__img {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  width: 100%;
+  height: 250px;
+  border-bottom: 1px solid #e9e9e9 ;
+  transition: 0.5s;
 }
 
-.App-link {
-  color: #61dafb;
+.card .card__description {
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  transition: 0.5s;
+}
+.card .card__description .brand-2 {
+  font-family: 'Kdam Thmor', cursive;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+main .card:hover .card__img img {
+  width: 100%;
+  height: 100%;
+}
+main .card:hover .card__img {
+  height: 220px;
+  align-items: start;
+}
+
+main .card .card__img img{
+  width: 150px;
+  height: 150px;
+  transition: 0.5s;
+}
+main .card:hover .card__description {
+  height: 120px;
+}
+
+
+@media  (max-width : 600px){
+  .main {
+    padding: 0 20px;
+    margin-top: 10px;
   }
-  to {
-    transform: rotate(360deg);
+  .main .card {
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    cursor: pointer;
+  }
+  .card .card__img {
+    height: 150px;
+    width: 150px;
+  }
+  .card .card__description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    height: 150px;
+  }
+  main .card:hover .card__img img {
+    width: 100%;
+    height: 100%;
+  }
+  main .card:hover .card__img {
+    height: 150px;
+    width: 180%;
+  }
+
+  main .card:hover .card__description {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: start;
+    height: 150px;
+  }
+  .card .heart {
+    width: 20px;
+    height: 20px;
   }
 }
+
+
